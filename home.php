@@ -55,7 +55,7 @@ if(isset($_SESSION['UserId']))
                 <ul class="navbar-nav nav-flex-icons">
                     <?php echo $UserNavItems; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="registrazione.php"><i class="fas fa-user-edit"></i>Sing up</a>
+                        <a class="nav-link" href="registrazione.php"><i class="fas fa-user-edit"></i>Sign up</a>
                     </li>
                 </ul>
             </div>
