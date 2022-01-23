@@ -5935,7 +5935,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Untitled",
+			"name": "sequenceUserDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLModel",
@@ -5967,7 +5967,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF+h5yPo+BWApI="
 									},
-									"name": "SequenceDiagram1",
+									"name": "SequenceUserDiagram",
 									"ownedViews": [
 										{
 											"_type": "UMLFrameView",
@@ -5986,9 +5986,9 @@
 														"$ref": "AAAAAAF+h5yPoN8t0WA="
 													},
 													"font": "Arial;13;0",
-													"left": 240.72998046875,
+													"left": 238.55908203125,
 													"top": 5,
-													"width": 115.9052734375,
+													"width": 102.791015625,
 													"height": 13,
 													"text": "SequenceDiagram1"
 												},
@@ -6001,7 +6001,7 @@
 													"font": "Arial;13;1",
 													"left": 221,
 													"top": 5,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -6635,7 +6635,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 360.72998046875,
+													"left": 359.99365234375,
 													"top": 109,
 													"width": 1,
 													"height": 13
@@ -6649,7 +6649,7 @@
 													"font": "Arial;13;1",
 													"left": 341,
 													"top": 109,
-													"width": 14.72998046875,
+													"width": 13.99365234375,
 													"height": 13,
 													"text": "alt"
 												},
@@ -6682,7 +6682,7 @@
 																	"font": "Arial;13;0",
 																	"left": 356,
 																	"top": 142,
-																	"width": 90.33349609375,
+																	"width": 86.302734375,
 																	"height": 13,
 																	"text": "[option: signUp]"
 																}
@@ -6715,7 +6715,7 @@
 																	"font": "Arial;13;0",
 																	"left": 356,
 																	"top": 416,
-																	"width": 85.287109375,
+																	"width": 83.04638671875,
 																	"height": 13,
 																	"text": "[option: Log in]"
 																}
@@ -6748,7 +6748,7 @@
 																	"font": "Arial;13;0",
 																	"left": 356,
 																	"top": 664,
-																	"width": 123.576171875,
+																	"width": 116.24462890625,
 																	"height": 13,
 																	"text": "[option: car financing]"
 																}
@@ -6803,7 +6803,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 672.72998046875,
+													"left": 671.99365234375,
 													"top": 813,
 													"width": 1,
 													"height": 13
@@ -6817,7 +6817,7 @@
 													"font": "Arial;13;1",
 													"left": 653,
 													"top": 813,
-													"width": 14.72998046875,
+													"width": 13.99365234375,
 													"height": 13,
 													"text": "alt"
 												},
@@ -7503,7 +7503,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 1493.07177734375,
+													"left": 1491.61181640625,
 													"top": 1181,
 													"width": 1,
 													"height": 13
@@ -7517,7 +7517,7 @@
 													"font": "Arial;13;1",
 													"left": 1469,
 													"top": 1181,
-													"width": 19.07177734375,
+													"width": 17.61181640625,
 													"height": 13,
 													"text": "opt"
 												},
@@ -10197,9 +10197,9 @@
 														"$ref": "AAAAAAF+h5yPouAAzOU="
 													},
 													"font": "Arial;13;0",
-													"left": 509.07177734375,
+													"left": 507.61181640625,
 													"top": 149,
-													"width": 28.4599609375,
+													"width": 25.552734375,
 													"height": 13,
 													"text": "Chat"
 												},
@@ -10212,7 +10212,7 @@
 													"font": "Arial;13;1",
 													"left": 485,
 													"top": 149,
-													"width": 19.07177734375,
+													"width": 17.61181640625,
 													"height": 13,
 													"text": "opt"
 												},
@@ -10298,9 +10298,9 @@
 														"$ref": "AAAAAAF+h5yPouAGSgU="
 													},
 													"font": "Arial;13;0",
-													"left": 533.07177734375,
+													"left": 531.61181640625,
 													"top": 421,
-													"width": 28.4599609375,
+													"width": 25.552734375,
 													"height": 13,
 													"text": "Chat"
 												},
@@ -10313,7 +10313,7 @@
 													"font": "Arial;13;1",
 													"left": 509,
 													"top": 421,
-													"width": 19.07177734375,
+													"width": 17.61181640625,
 													"height": 13,
 													"text": "opt"
 												},
@@ -10399,9 +10399,9 @@
 														"$ref": "AAAAAAF+h5yPouAMqr0="
 													},
 													"font": "Arial;13;0",
-													"left": 541.07177734375,
+													"left": 539.61181640625,
 													"top": 661,
-													"width": 28.4599609375,
+													"width": 25.552734375,
 													"height": 13,
 													"text": "Chat"
 												},
@@ -10414,7 +10414,7 @@
 													"font": "Arial;13;1",
 													"left": 517,
 													"top": 661,
-													"width": 19.07177734375,
+													"width": 17.61181640625,
 													"height": 13,
 													"text": "opt"
 												},
@@ -10500,9 +10500,9 @@
 														"$ref": "AAAAAAF+h5yPouAS2/o="
 													},
 													"font": "Arial;13;0",
-													"left": 579.578125,
+													"left": 578.11181640625,
 													"top": 685,
-													"width": 143.35888671875,
+													"width": 127.73095703125,
 													"height": 13,
 													"text": "while user has questions"
 												},
@@ -10515,7 +10515,7 @@
 													"font": "Arial;13;1",
 													"left": 549,
 													"top": 685,
-													"width": 25.578125,
+													"width": 24.11181640625,
 													"height": 13,
 													"text": "loop"
 												},
@@ -10601,9 +10601,9 @@
 														"$ref": "AAAAAAF+h5yPouAYbh8="
 													},
 													"font": "Arial;13;0",
-													"left": 579.578125,
+													"left": 578.11181640625,
 													"top": 445,
-													"width": 143.35888671875,
+													"width": 127.73095703125,
 													"height": 13,
 													"text": "while user has questions"
 												},
@@ -10616,7 +10616,7 @@
 													"font": "Arial;13;1",
 													"left": 549,
 													"top": 445,
-													"width": 25.578125,
+													"width": 24.11181640625,
 													"height": 13,
 													"text": "loop"
 												},
@@ -10702,9 +10702,9 @@
 														"$ref": "AAAAAAF+h5yPouAe4gQ="
 													},
 													"font": "Arial;13;0",
-													"left": 555.578125,
+													"left": 554.11181640625,
 													"top": 173,
-													"width": 143.35888671875,
+													"width": 127.73095703125,
 													"height": 13,
 													"text": "while user has questions"
 												},
@@ -10717,7 +10717,7 @@
 													"font": "Arial;13;1",
 													"left": 525,
 													"top": 173,
-													"width": 25.578125,
+													"width": 24.11181640625,
 													"height": 13,
 													"text": "loop"
 												},
@@ -11567,7 +11567,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Untitled",
+			"name": "sequenceAdminPanel",
 			"ownedElements": [
 				{
 					"_type": "UMLModel",
@@ -11618,9 +11618,9 @@
 														"$ref": "AAAAAAF+h53H2+ItjYI="
 													},
 													"font": "Arial;13;0",
-													"left": 128.72998046875,
+													"left": 126.55908203125,
 													"top": 29,
-													"width": 129.64794921875,
+													"width": 115.8037109375,
 													"height": 13,
 													"text": "SequenceAdminPanel"
 												},
@@ -11633,7 +11633,7 @@
 													"font": "Arial;13;1",
 													"left": 109,
 													"top": 29,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -12703,7 +12703,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 363.578125,
+													"left": 362.11181640625,
 													"top": 309,
 													"width": 1,
 													"height": 13
@@ -12717,7 +12717,7 @@
 													"font": "Arial;13;1",
 													"left": 333,
 													"top": 309,
-													"width": 25.578125,
+													"width": 24.11181640625,
 													"height": 13,
 													"text": "loop"
 												},
@@ -12750,7 +12750,7 @@
 																	"font": "Arial;13;0",
 																	"left": 348,
 																	"top": 342,
-																	"width": 147.4306640625,
+																	"width": 132.85009765625,
 																	"height": 13,
 																	"text": "[user has operation to do]"
 																}
@@ -12836,9 +12836,9 @@
 														"$ref": "AAAAAAF+h53H3OJ2mHY="
 													},
 													"font": "Arial;13;0",
-													"left": 360.72998046875,
+													"left": 359.99365234375,
 													"top": 373,
-													"width": 69.6435546875,
+													"width": 63.08642578125,
 													"height": 13,
 													"text": "addNewCar"
 												},
@@ -12851,7 +12851,7 @@
 													"font": "Arial;13;1",
 													"left": 341,
 													"top": 373,
-													"width": 14.72998046875,
+													"width": 13.99365234375,
 													"height": 13,
 													"text": "alt"
 												},
@@ -12884,7 +12884,7 @@
 																	"font": "Arial;13;0",
 																	"left": 356,
 																	"top": 406,
-																	"width": 49.86083984375,
+																	"width": 46.1982421875,
 																	"height": 13,
 																	"text": "[addCar]"
 																}
@@ -12917,7 +12917,7 @@
 																	"font": "Arial;13;0",
 																	"left": 356,
 																	"top": 544,
-																	"width": 78.76171875,
+																	"width": 72.54736328125,
 																	"height": 13,
 																	"text": "[Manage Car]"
 																}
@@ -15237,7 +15237,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Untitled",
+			"name": "stateMachineDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLStateMachine",
@@ -22366,7 +22366,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Untitled",
+			"name": "useCaseDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLModel",
