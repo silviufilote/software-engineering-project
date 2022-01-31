@@ -9,7 +9,7 @@ $Dati = '';
 
 
 /* il mio pezzo */
-if ($stmt = $conn->prepare("SELECT tipo,durata,canoneMensile,totDaFinanziare,tanMensile,TargaVeicolo FROM Operazione WHERE IDutente = ? ")) {
+if ($stmt = $conn->prepare("SELECT tipo,durata,canoneMensile,totDaFinanziare,tanMensile,idVeicolo FROM Operazione WHERE IDutente = ? ")) {
 		$stmt->bind_param("i", $_SESSION['UserId']);
 		//$stmt->bind_param("i",$utente = 1);
 		$stmt->execute();
@@ -90,7 +90,7 @@ if ($stmt = $conn->prepare("SELECT tipo,durata,canoneMensile,totDaFinanziare,tan
 	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['marca'].'</td>';
 	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['modello'].'</td>';
 	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['versione'].'</td>';
-	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['targaVeicolo'].'</td>';
+	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['idVeicolo'].'</td>';
 	  $Dati = $Dati.'<td class="pt-3-half" >'.$row['rimanenti'].'</td>';
 	  $Dati = $Dati.'<td class="pt-3-half" >'.number_format($row['Rata'], 2, '.', '').'</td>';
 	  $Dati = $Dati.'<td class="pt-3-half" ">'.$row['tipo'].'</td>';

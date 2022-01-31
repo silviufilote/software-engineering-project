@@ -22,7 +22,7 @@ if( isset($_POST['prezzo']) && isset($_POST['mese']) && isset($_POST['anticipo']
 	$sepa = 5;
 	$utente =  $_SESSION['UserId']; /*$_SESSION['UserId']*/
 
-	$targaVeicolo = getTarga();
+	$idVeicolo = getTarga();
 	$interessi = ($prezzo * $tanFisso * ($mese / 12))/100;
 	$canoneMensile = ($interessi/$mese)+($totFinanziare/$mese);
 	$taeg= 1; /* da calcolare bene */
@@ -31,8 +31,8 @@ if( isset($_POST['prezzo']) && isset($_POST['mese']) && isset($_POST['anticipo']
 	if (mysqli_connect_errno()) {
 		exit();
 	}
-	if ($stmt = $mysqli->prepare("INSERT INTO `Operazione` (`Codice`, `tipo`, `durata`, `mesiPagati`, `anticipo`, `km`, `valoreRiscatto`, `canoneMensile`, `tanFisso`, `totDaFinanziare`, `totDaRimborsare`, `marchiature`, `polizzaPneumatici`, `bolliContrattuali`, `speseIstruttoria`, `speseRendiconto`, `sepa`, `IDutente`, `TargaVeicolo`, `interessi`, taeg`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
-		$stmt->bind_param("siididdddddddddddisdd", $tipo, $mese, $mesiPagati, $anticipo, $chilometraggio, $valoreRiscatto, $canoneMensile, $tanFisso, $totFinanziare, $totRimborsare, $marchiatura, $polizzaPneu, $bolliContrattuali, $speseIstruttoria, $speseRendiconto, $sepa, $utente, $targaVeicolo, $interessi, $taeg`);
+	if ($stmt = $mysqli->prepare("INSERT INTO `Operazione` (`Codice`, `tipo`, `durata`, `mesiPagati`, `anticipo`, `km`, `valoreRiscatto`, `canoneMensile`, `tanFisso`, `totDaFinanziare`, `totDaRimborsare`, `marchiature`, `polizzaPneumatici`, `bolliContrattuali`, `speseIstruttoria`, `speseRendiconto`, `sepa`, `IDutente`, `idVeicolo`, `interessi`, taeg`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
+		$stmt->bind_param("siididdddddddddddisdd", $tipo, $mese, $mesiPagati, $anticipo, $chilometraggio, $valoreRiscatto, $canoneMensile, $tanFisso, $totFinanziare, $totRimborsare, $marchiatura, $polizzaPneu, $bolliContrattuali, $speseIstruttoria, $speseRendiconto, $sepa, $utente, $idVeicolo, $interessi, $taeg`);
 		$stmt->execute();
 		$stmt->bind_result();
 		$stmt->fetch();
@@ -49,7 +49,7 @@ function getTarga(){
 	if (mysqli_connect_errno()) {
 		exit();
 	}
-	if ($stmt = $mysqli->prepare("SELECT TargaVeicolo WHERE marca = ? AND modello = ? AND versione = ?")) {
+	if ($stmt = $mysqli->prepare("SELECT idVeicolo WHERE marca = ? AND modello = ? AND versione = ?")) {
 		$stmt->bind_param("sss", $_POST['brand'], $_POST['modello'], $_POST['versione']);
 		$stmt->execute();
 		$stmt->bind_result($targa);
