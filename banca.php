@@ -8,7 +8,7 @@ $Dati = '';
 //Prima tabella
 $sql = '';
 $conn = mysqli_connect('localhost','avoc','','my_avoc');
-$stmt = $conn->prepare("SELECT Marca,Modello,Versione,Targaveicolo,Annoimmatricolazione,Prezzo,NumPosti,Lunghezza,Larghezza,Peso from Veicolo where TargaVeicolo not in (Select v.TargaVeicolo from Veicolo v inner join Operazione o on o.TargaVeicolo = v.TargaVeicolo) and Veicolo.IDbanca = ? order by Veicolo.TargaVeicolo asc");
+$stmt = $conn->prepare("SELECT Marca,Modello,Versione,idVeicolo,Annoimmatricolazione,Prezzo,NumPosti,Lunghezza,Larghezza,Peso from Veicolo where idVeicolo not in (Select v.idVeicolo from Veicolo v inner join Operazione o on o.idVeicolo = v.idVeicolo) and Veicolo.IDbanca = ? order by Veicolo.idVeicolo asc");
 
 $stmt->bind_param('i',$_SESSION['UserId']);
 $stmt->execute();
@@ -16,23 +16,23 @@ $result=$stmt->get_result();
 while($row = $result->fetch_assoc())
 {
   $Dati = $Dati.'<tr>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Marca-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Marca'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Modello-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Modello'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Versione-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Versione'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Targaveicolo-'.$row['Targaveicolo'].'" >'.$row['Targaveicolo'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Annoimmatricolazione-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Annoimmatricolazione'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Prezzo-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Prezzo'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="NumPosti-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['NumPosti'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Lunghezza-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Lunghezza'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Larghezza-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Larghezza'].'</td>';
-  $Dati = $Dati.'<td class="pt-3-half" id="Peso-'.$row['Targaveicolo'].'" contenteditable="true">'.$row['Peso'].'</td>';
-  $Dati = $Dati.'<td><span><button type="button" class="btn blue-gradient btn-sm pad" onclick="salvaModifiche('.$row['Targaveicolo'].')" >Modifica</button><button type="button" class="btn btn-outline-primary waves-effect btn-sm pad" onclick="eliminaMacchina('.$row['Targaveicolo'].')" >Elimina</button></span></td></tr>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Marca-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Marca'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Modello-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Modello'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Versione-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Versione'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="idVeicolo-'.$row['idVeicolo'].'" >'.$row['idVeicolo'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Annoimmatricolazione-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Annoimmatricolazione'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Prezzo-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Prezzo'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="NumPosti-'.$row['idVeicolo'].'" contenteditable="true">'.$row['NumPosti'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Lunghezza-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Lunghezza'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Larghezza-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Larghezza'].'</td>';
+  $Dati = $Dati.'<td class="pt-3-half" id="Peso-'.$row['idVeicolo'].'" contenteditable="true">'.$row['Peso'].'</td>';
+  $Dati = $Dati.'<td><span><button type="button" class="btn blue-gradient btn-sm pad" onclick="salvaModifiche('.$row['idVeicolo'].')" >Modifica</button><button type="button" class="btn btn-outline-primary waves-effect btn-sm pad" onclick="eliminaMacchina('.$row['idVeicolo'].')" >Elimina</button></span></td></tr>';
 }
 
 //Seconda tabella
 $sql = '';
 $conn = mysqli_connect('localhost','avoc','','my_avoc');
-$stmt = $conn->prepare("select Marca,Modello,Versione,Operazione.TargaVeicolo,Utente.CF,(((tanFisso * (Prezzo - anticipo) * (durata/12)) /100)+ Prezzo)/ durata as Rata,tipo, durata - mesiPagati as rimanenti from Veicolo inner join Operazione on Veicolo.targaVeicolo = Operazione.targaVeicolo inner join Utente on Utente.ID = Operazione.IDutente where Veicolo.IDbanca = ?");
+$stmt = $conn->prepare("select Marca,Modello,Versione,Operazione.idVeicolo,Utente.CF,(((tanFisso * (Prezzo - anticipo) * (durata/12)) /100)+ Prezzo)/ durata as Rata,tipo, durata - mesiPagati as rimanenti from Veicolo inner join Operazione on Veicolo.idVeicolo = Operazione.idVeicolo inner join Utente on Utente.ID = Operazione.IDutente where Veicolo.IDbanca = ?");
 $stmt->bind_param('i',$_SESSION['UserId']);
 $stmt->execute();
 $result=$stmt->get_result();
@@ -42,7 +42,7 @@ while($row = $result->fetch_assoc())
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['Marca'].'</td>';
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['Modello'].'</td>';
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['Versione'].'</td>';
-  $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['TargaVeicolo'].'</td>';
+  $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['idVeicolo'].'</td>';
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['CF'].'</td>';
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.round($row['Rata'], 2).'</td>';
   $Dati2 = $Dati2.'<td class="pt-3-half" >'.$row['tipo'].'</td>';
@@ -330,7 +330,7 @@ while($row = $result->fetch_assoc())
       Marca = $('#Marca-'+targa).text();
       Modello = $('#Modello-'+targa).text();
       Versione = $('#Versione-'+targa).text();
-      Targa = $('#Targaveicolo-'+targa).text();
+      Targa = $('#idVeicolo-'+targa).text();
       Annoimmatricolazione = $('#Annoimmatricolazione-'+targa).text();
       Prezzo = $('#Prezzo-'+targa).text();
       NumPosti = $('#NumPosti-'+targa).text();

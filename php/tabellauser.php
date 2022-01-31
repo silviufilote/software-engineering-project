@@ -3,7 +3,7 @@ session_start();
 $sql = '';
 $Dati2 = '';
 $conn = mysqli_connect('localhost','avoc','','my_avoc');
-$stmt = $conn->prepare("select canoneMensile as Rata, o.durata as mesi, o.totDaFinanziare, o.tipo, o.km, v.prezzo, o.anticipo, o.interessi from Veicolo v inner join Operazione o on v.targaVeicolo = o.targaVeicolo inner join Utente on Utente.ID = o.IDutente where o.IDutente = ? and o.Codice=?");
+$stmt = $conn->prepare("select canoneMensile as Rata, o.durata as mesi, o.totDaFinanziare, o.tipo, o.km, v.prezzo, o.anticipo, o.interessi from Veicolo v inner join Operazione o on v.idVeicolo = o.idVeicolo inner join Utente on Utente.ID = o.IDutente where o.IDutente = ? and o.Codice=?");
 $stmt->bind_param('ii', $_SESSION['UserId'],$_POST['Codice']);
 $stmt->execute();
 $result=$stmt->get_result();

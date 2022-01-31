@@ -82,7 +82,7 @@
 
         public function inserisciRiepilogo($sessId){
             $conn = mysqli_connect('localhost','avoc','','my_avoc');
-            if ($stmt = $conn->prepare("INSERT INTO Operazione (tipo, durata, mesiPagati, anticipo, km, valoreRiscatto, canoneMensile, tanFisso, totDaFinanziare, totDaRimborsare, marchiature, polizzaPneumatici, bolliContrattuali, speseIstruttoria, speseRendiconto, sepa, IDutente, TargaVeicolo, interessi, tanMensile, taeg) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
+            if ($stmt = $conn->prepare("INSERT INTO Operazione (tipo, durata, mesiPagati, anticipo, km, valoreRiscatto, canoneMensile, tanFisso, totDaFinanziare, totDaRimborsare, marchiature, polizzaPneumatici, bolliContrattuali, speseIstruttoria, speseRendiconto, sepa, IDutente, idVeicolo, interessi, tanMensile, taeg) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
                 $stmt->bind_param("siididddddddddddisddd", $this->tipo, $this->mesi, $this->mesiPagati, $this->anticipo, $this->chilometraggio, $this->riscatto, $this->rataMensile, $this->tanFisso, $this->totDaFinanziare, $this->totDaRimborsare, $this->marchiatura, $this->pneumatici, $this->bolli, $this->speseIstruttoria, $this->speseRendiconto, $this->sepa, $sessId, $this->targa, $this->interessi, $this->tanMensile, $this->taeg);
                 $stmt->execute();
             }
@@ -91,7 +91,7 @@
         
         public static function creazioneTabella($sessId){
             $conn = mysqli_connect('localhost','avoc','','my_avoc');
-            if ($stmt = $conn->prepare("Select o.codice as Codice,o.totdaFinanziare,o.anticipo,v.targaVeicolo,v.marca,v.modello,v.versione,v.targaVeicolo,o.durata - o.mesiPagati as rimanenti ,canoneMensile as Rata,o.tanFisso,v.Prezzo,o.tipo from Veicolo v inner join Operazione o on v.targaVeicolo = o.targaVeicolo where o.IDutente = ?")) {
+            if ($stmt = $conn->prepare("Select o.codice as Codice,o.totdaFinanziare,o.anticipo,v.idVeicolo,v.marca,v.modello,v.versione,v.idVeicolo,o.durata - o.mesiPagati as rimanenti ,canoneMensile as Rata,o.tanFisso,v.Prezzo,o.tipo from Veicolo v inner join Operazione o on v.idVeicolo = o.idVeicolo where o.IDutente = ?")) {
                 $stmt->bind_param('i', $sessId);
 	            $stmt->execute();
                 return $stmt->get_result();
